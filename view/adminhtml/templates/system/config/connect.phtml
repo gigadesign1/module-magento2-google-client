@@ -1,0 +1,10 @@
+<?php /* @var $block \Gigadesign\GoogleClient\Block\System\Config\Connect */ ?>
+<script type="text/javascript">
+    //<![CDATA[
+    function doOAuth() {
+        var win = window.open('<?php echo $block->getAuthenticationUrl(); ?>', '_self');
+        win.focus();
+    }
+    //]]>
+</script>
+<?php echo $block->getButtonHtml() ?>

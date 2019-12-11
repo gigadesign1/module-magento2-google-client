@@ -1,0 +1,24 @@
+{
+    "name": "gigadesign/module-google-client",
+    "description": "Wrapper to easily connect to Google Client and use Google API services",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mark van der Werf",
+            "email": "info@gigadesign.nl"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.4",
+        "magento/framework": ">=102.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gigadesign\\GoogleClient\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
