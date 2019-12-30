@@ -60,7 +60,7 @@ class GoogleClientManager
         ScopeConfigInterface $scopeConfig,
         WriterInterface $configWriter,
         StoreManagerInterface $storeManager,
-        array $scopes
+        array $scopes = []
     ) {
         $this->scopeConfig = $scopeConfig;
         $this->configWriter = $configWriter;
@@ -81,7 +81,7 @@ class GoogleClientManager
         return null;
     }
 
-    public function setAuthCode(string $authCode)
+    public function setAuthCode(string $authCode): self
     {
         if ($this->getClient())
         {
@@ -90,6 +90,18 @@ class GoogleClientManager
 
             $this->setAccessToken($accessToken);
         }
+
+        return $this;
+    }
+
+    public function setDeveloperKey(string $developerKey): self
+    {
+        if ($this->getClient())
+        {
+            $this->getClient()->setDeveloperKey($developerKey);
+        }
+
+        return $this;
     }
 
     public function getService(string $serviceName): ?\Google_Service
